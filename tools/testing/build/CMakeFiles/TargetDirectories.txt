@@ -1,3 +1,0 @@
-/home/zarevich/Documents/youbot_driver_rev2/tools/testing/build/CMakeFiles/edit_cache.dir
-/home/zarevich/Documents/youbot_driver_rev2/tools/testing/build/CMakeFiles/rebuild_cache.dir
-/home/zarevich/Documents/youbot_driver_rev2/tools/testing/build/CMakeFiles/base_arm_gripper_test.dir
