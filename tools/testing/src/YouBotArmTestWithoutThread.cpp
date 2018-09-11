@@ -65,7 +65,7 @@ void YouBotArmTestWithoutThread::youBotArmTest() {
 
 
   for (int i = 1; i <= dof; i++) {
-    jointNameStream << "Joint_" << i << "_" << __func__;
+    jointNameStream << __func__ << "_Joint_" << i;
     myTrace.push_back(new DataTrace(myArm.getArmJoint(i), jointNameStream.str(), true));
     jointNameStream.str("");
   }

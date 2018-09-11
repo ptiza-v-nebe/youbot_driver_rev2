@@ -3,7 +3,6 @@
 using namespace youbot;
 
 YouBotArmTest::YouBotArmTest():dof(5) {
-  //std::cout << "Config dir path:" << YOUBOT_CONFIGURATIONS_DIR << std::endl;
   EthercatMaster::getInstance("youbot-ethercat.cfg", YOUBOT_CONFIGURATIONS_DIR, true);
 
 
@@ -60,7 +59,7 @@ void YouBotArmTest::youBotArmTest() {
 
 
   for (int i = 1; i <= dof; i++) {
-    jointNameStream << "Joint_" << i << "_" << __func__;
+    jointNameStream << __func__ << "_Joint_" << i;
     myTrace.push_back(new DataTrace(myArm.getArmJoint(i), jointNameStream.str(), true));
     jointNameStream.str("");
   }

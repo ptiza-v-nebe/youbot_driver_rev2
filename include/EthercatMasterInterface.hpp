@@ -55,6 +55,7 @@
 #include "YouBotSlaveMailboxMsg.hpp"
 #include "JointLimitMonitor.hpp"
 extern "C"{
+#include <nicdrv.h>
 #include <ethercattype.h>
 #include <ethercatmain.h>
 }

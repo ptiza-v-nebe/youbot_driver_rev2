@@ -1,4 +1,4 @@
-PROJECT(youBot_DiagnosticsTool)
+PROJECT(youBot_KeyboardRemoteControl)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 
 ## check required prerequisites
@@ -8,9 +8,9 @@ SET(Boost_ADDITIONAL_VERSIONS "1.39" "1.39.0" "1.40" "1.40.0" "1.41" "1.41.0" "1
 FIND_PACKAGE(Boost REQUIRED COMPONENTS thread date_time filesystem system)
 FIND_PACKAGE(YoubotDriver REQUIRED)
 
-
 ## preprocessor definitions
-ADD_DEFINITIONS(-DYOUBOT_CONFIGURATIONS_DIR="${YOUBOT_DRIVER_CONFIG_DIR}")
+ADD_DEFINITIONS(-DYOUBOT_CONFIGURATIONS_DIR="${YOUBOT_DRIVER_CONFIG_DIR}/")
+ADD_DEFINITIONS(-DCONFIG_DIR="${PROJECT_SOURCE_DIR}/config")
 
 ## build parameters and paths
 SET(CMAKE_BUILD_TYPE DEBUG) #enable debug mode (e.g. for embedded gdb in eclipse )
@@ -18,23 +18,22 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/ CACHE PATH "Configure the 
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib/ CACHE PATH "Configure the library output path.")
 
 
+
 ## Compile and link
-ADD_EXECUTABLE(youBot_DiagnosticsTool
+ADD_EXECUTABLE(youBot_KeyboardRemoteControl
   src/main.cpp
-  src/YouBotDiagnostics.cpp
-  src/YouBotDiagnostics.h
 )
 
-TARGET_LINK_LIBRARIES(youBot_DiagnosticsTool
+TARGET_LINK_LIBRARIES(youBot_KeyboardRemoteControl
 	${YOUBOT_DRIVER_LIBRARIES}
 	${Boost_LIBRARIES}
 	pthread
+	ncurses
 )
 
-TARGET_INCLUDE_DIRECTORIES(youBot_DiagnosticsTool PRIVATE
+TARGET_INCLUDE_DIRECTORIES(youBot_KeyboardRemoteControl PRIVATE
 	${YOUBOT_DRIVER_INCLUDE_DIR}
 	${Boost_INCLUDE_DIR}
 )
 
-#INSTALL(TARGETS youBot_DiagnosticsTool RUNTIME DESTINATION bin LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
-
+#INSTALL(TARGETS youBot_KeyboardRemoteControl RUNTIME DESTINATION bin LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)

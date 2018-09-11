@@ -162,7 +162,7 @@ void YouBotJoint::getConfigurationParameter(GearRatio& parameter) {
 void YouBotJoint::setConfigurationParameter(const GearRatio& parameter) {
   // Bouml preserved body begin 00073FF1
     if (parameter.value == 0) {
-      throw std::out_of_range("A Gear Ratio of zero is not allowed");
+      throw std::out_of_range("A Gear Ratio of zero is not allowed. (setConfigurationParameter, gearratio)");
     }
     this->storage.gearRatio = parameter.value;
   // Bouml preserved body end 00073FF1
@@ -267,6 +267,7 @@ void YouBotJoint::setConfigurationParameter(const JointLimits& parameter) {
 		if(this->storage.areLimitsActive){
 			this->getConfigurationParameter(acc);
 		  acc.getParameter(accValue);
+      std::cout << "YouBotJoint::setConfigurationParameter(const JointLimits& parameter) " << this->storage.gearRatio << std::endl;
 			this->limitMonitor.reset(new JointLimitMonitor(this->storage, accValue));
 			ethercatMaster->registerJointLimitMonitor(this->limitMonitor.get(), this->storage.jointNumber);
 		}else{
@@ -451,7 +452,7 @@ void YouBotJoint::setData(const JointAngleSetpoint& data) {
     this->parseYouBotErrorFlags(messageBuffer);
     
     if (storage.gearRatio == 0) {
-      throw std::out_of_range("A Gear Ratio of zero is not allowed");
+      throw std::out_of_range("A Gear Ratio of zero is not allowed. (setData, anglesetpoint)");
     }
     
     if (storage.encoderTicksPerRound == 0) {
@@ -459,6 +460,7 @@ void YouBotJoint::setData(const JointAngleSetpoint& data) {
     }
 
 		if (this->limitMonitor != 0)
+    std::cout << "YouBotJoint::setData, storage.gearRatio: " << storage.gearRatio << std::endl;
 		 this->limitMonitor->checkLimitsPositionControl(data.angle);
 
     messageBuffer.stctOutput.controllerMode = POSITION_CONTROL;
@@ -513,7 +515,7 @@ void YouBotJoint::getData(JointSensedAngle& data) {
     this->parseYouBotErrorFlags(messageBuffer);
 
     if (storage.gearRatio == 0) {
-      throw std::out_of_range("A Gear Ratio of zero is not allowed");
+      throw std::out_of_range("A Gear Ratio of zero is not allowed. (getData, sensedAngle)");
     }
     if (storage.encoderTicksPerRound == 0) {
       throw std::out_of_range("Zero Encoder Ticks per Round are not allowed");
@@ -774,7 +776,7 @@ void YouBotJoint::getData(JointAngleSetpoint& data) {
     this->parseYouBotErrorFlags(messageBuffer);
 
     if (storage.gearRatio == 0) {
-      throw std::out_of_range("A Gear Ratio of zero is not allowed");
+      throw std::out_of_range("A Gear Ratio of zero is not allowed. (getData, anglesetpoint)");
     }
     if (storage.encoderTicksPerRound == 0) {
       throw std::out_of_range("Zero Encoder Ticks per Round are not allowed");

@@ -77,9 +77,9 @@ GripperDataTrace::GripperDataTrace(YouBotGripperBar& youBotGripperBar, const std
 
     }else{
       boost::filesystem::path rootPath (this->path);
-
-      if ( !boost::filesystem::create_directories( rootPath ))
-        throw std::runtime_error("could not create folder!");
+      boost::filesystem::create_directories( rootPath );
+      /*if ( !boost::filesystem::create_directories( rootPath ))
+        throw std::runtime_error("could not create folder!");*/
       
     }
     
@@ -207,7 +207,7 @@ void GripperDataTrace::plotTrace() {
   
     std::string executeString = "cd ";
     executeString.append(path);
-    executeString.append("; gnuplot ../../GripperGnuPlotConfig");
+    executeString.append("; gnuplot ../../config/GripperGnuPlotConfig");
     // > /dev/null 2>&1");
     std::system(executeString.c_str());
   // Bouml preserved body end 00101DF1

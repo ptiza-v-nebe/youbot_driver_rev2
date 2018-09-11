@@ -53,6 +53,8 @@ namespace youbot {
 
 JointLimitMonitor::JointLimitMonitor(const YouBotJointStorage& jointParameters, const quantity<angular_acceleration>& jointAcceleration) {
   // Bouml preserved body begin 000FAB71
+   std::cout << "JointLimitMonitor::JointLimitMonitor(const YouBotJointStorage& jointParameters, const quantity<angular_acceleration>& jointAcceleration): " << this->storage.gearRatio << std::endl;//myDebug: for some reason storage.gearRation is zero if use diagnostic_tool
+ 
 	this->storage = jointParameters;
 	this->acceleration = jointAcceleration.value();  // rad/s^2
 	brakingDistance = 0;
@@ -83,9 +85,11 @@ JointLimitMonitor & JointLimitMonitor::operator=(const JointLimitMonitor & sourc
 }
 
 void JointLimitMonitor::checkLimitsPositionControl(const quantity<plane_angle>& setpoint) {
+  
+  std::cout << "JointLimitMonitor::checkLimitsPositionControl, storage.gearRatio: " << storage.gearRatio << std::endl;//myDebug: for some reason storage.gearRation is zero if use diagnostic_tool
   // Bouml preserved body begin 000FAD71
 	if (storage.gearRatio == 0) {
-      throw std::out_of_range("A Gear Ratio of zero is not allowed");
+      throw std::out_of_range("A Gear Ratio of zero is not allowed. (JointLimitMonitor, checkLimitsPositionControl)");
     }
     
     if (storage.encoderTicksPerRound == 0) {

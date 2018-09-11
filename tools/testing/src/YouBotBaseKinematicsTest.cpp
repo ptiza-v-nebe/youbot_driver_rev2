@@ -51,7 +51,7 @@ void YouBotBaseKinematicsTest::youBotBaseKinematicsTest() {
   quantity<si::plane_angle> actualAngle = 0 * radian;
 
   for (int i = 1; i <= 4; i++) {
-    jointNameStream << "Joint_" << i << "_" << __func__;
+    jointNameStream << __func__ << "_Joint_" << i;
     myTrace.push_back(new DataTrace(myBase.getBaseJoint(i), jointNameStream.str(), true));
     jointNameStream.str("");
     myBase.getBaseJoint(i).setEncoderToZero();
