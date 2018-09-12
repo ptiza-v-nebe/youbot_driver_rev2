@@ -49,11 +49,11 @@ void YouBotDiagnostics::startDiagnostics()
 
 	testInitialization();
 	testFunctionOfControllerboards();
-	/*testFunctionManually();
+	testFunctionManually();
 
 	quickRestartTest();
 
-	showSummary();*/
+	showSummary();
 }
 
 
@@ -278,8 +278,8 @@ void YouBotDiagnostics::getAllTopologicalInformation()
 			it->second.joint->setConfigurationParameter(jName);
 			it->second.joint->setConfigurationParameter(ticksPerRound);
 			it->second.joint->setConfigurationParameter(inverseDir);
-			it->second.joint->setConfigurationParameter(jLimits);
 			it->second.joint->setConfigurationParameter(gearRatio);
+			it->second.joint->setConfigurationParameter(jLimits);
 		}
 	}
 
@@ -580,41 +580,8 @@ void YouBotDiagnostics::testFunctionOfControllerboards()
 
 			activeJoint = youBotJointMap[slvCtr].joint;
 			
-			
-			//start myDebug
-			GearRatio gearRatio;
-            activeJoint->getConfigurationParameter(gearRatio);
-            double gearratio = 1;
-            gearRatio.getParameter(gearratio);
-			std::cout << "gearratio: " << gearratio << std::endl;
-            
-			/*
-			JointLimits jLimits;
-			boost::scoped_ptr<ConfigFile> configfile;
-			configfile.reset(new ConfigFile("youbot-ethercat.cfg", configFilePath));
-
-            long upperlimit = 0, lowerlimit = 0;
-            std::stringstream jointNameStream;
-            bool inverted = false;
-            jointNameStream << "Joint_" << slvCtr + 1;
-			std::string jointName;
-            jointName = jointNameStream.str();
-            JointEncoderSetpoint minEncoderValue;
-            configfile->readInto(lowerlimit, jointName, "LowerLimit_[encoderTicks]");
-            configfile->readInto(upperlimit, jointName, "UpperLimit_[encoderTicks]");
-            configfile->readInto(inverted, jointName, "InverseMovementDirection");
-
-			jLimits.setParameter(lowerlimit, upperlimit, true);
-            activeJoint->setConfigurationParameter(jLimits);
-			*/
-			
-			//end myDebug
-			
-
-
 			//now set velocity mode and check position changes
 			cmdSpeed.angularVelocity = 0.2 * radian_per_second;
-			std::cout << "setData(cmdSpeed)" << std::endl;
 			activeJoint->setData(cmdSpeed);
 
 			activeJoint->getData(msrAngle);
@@ -640,7 +607,6 @@ void YouBotDiagnostics::testFunctionOfControllerboards()
 				if ( i == (repeatLimit-1) )
 				{
 					cmdAngle.angle = 0.025 * radian;
-					std::cout << "setData(cmdAngle)" << std::endl;
 					activeJoint->setData(cmdAngle);
 				}
 			}

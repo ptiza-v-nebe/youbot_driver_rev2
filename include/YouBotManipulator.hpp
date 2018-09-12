@@ -59,12 +59,12 @@
 #include "generic/Time.hpp"
 #include "generic/ConfigFile.hpp"
 #include "generic/Exceptions.hpp"
-#include "YouBotGripper.hpp"
-#include "YouBotJoint.hpp"
-#include "EthercatMaster.hpp"
-#include "EthercatMasterInterface.hpp"
-#include "EthercatMasterWithThread.hpp"
-#include "EthercatMasterWithoutThread.hpp"
+#include "youbot/YouBotGripper.hpp"
+#include "youbot/YouBotJoint.hpp"
+#include "youbot/EthercatMaster.hpp"
+#include "youbot/EthercatMasterInterface.hpp"
+#include "youbot/EthercatMasterWithThread.hpp"
+#include "youbot/EthercatMasterWithoutThread.hpp"
 #include <boost/ptr_container/ptr_vector.hpp>
 #include <boost/scoped_ptr.hpp>
 namespace youbot {

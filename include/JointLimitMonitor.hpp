@@ -60,9 +60,9 @@
 #include "generic/Units.hpp"
 #include "generic/Time.hpp"
 #include "generic/Exceptions.hpp"
-#include "ProtocolDefinitions.hpp"
-#include "YouBotJointStorage.hpp"
-#include "YouBotSlaveMsg.hpp"
+#include "youbot/ProtocolDefinitions.hpp"
+#include "youbot/YouBotJointStorage.hpp"
+#include "youbot/YouBotSlaveMsg.hpp"
 
 namespace youbot {
 
