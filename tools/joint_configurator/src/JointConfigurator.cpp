@@ -141,9 +141,9 @@ void JointConfigurator::readParameters() {
   configfile->readInto(dummy, "Joint_Parameter", "MaximumPositioningVelocity");
   MaximumPositioningVelocity_file = dummy * radian_per_second;
   if (!AreSame(MaximumPositioningVelocity_actual.value(), MaximumPositioningVelocity_file.value())) {
-    std::cout << "MaximumPositioningVelocity \t\t\t\tactual: " << MaximumPositioningVelocity_actual << " \tNEW VALUE: " << MaximumPositioningVelocity_file << std::endl;
+    std::cout << "MaximumPositioningVelocity \t\t\t\tactual: " << MaximumPositioningVelocity_actual.value() << " \tNEW VALUE: " << MaximumPositioningVelocity_file.value() << std::endl;
   } else {
-    std::cout << "MaximumPositioningVelocity \t\t\t\tactual: " << MaximumPositioningVelocity_actual << std::endl;
+    std::cout << "MaximumPositioningVelocity \t\t\t\tactual: " << MaximumPositioningVelocity_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(MotorAcceleration_Parameter);
@@ -151,9 +151,9 @@ void JointConfigurator::readParameters() {
   configfile->readInto(dummy, "Joint_Parameter", "MotorAcceleration");
   MotorAcceleration_file = dummy * radian_per_second / second;
   if (!AreSame(MotorAcceleration_actual.value(), MotorAcceleration_file.value())) {
-    std::cout << "MotorAcceleration           \t\t\t\tactual: " << MotorAcceleration_actual << " \tNEW VALUE: " << MotorAcceleration_file << std::endl;
+    std::cout << "MotorAcceleration           \t\t\t\tactual: " << MotorAcceleration_actual.value() << " \tNEW VALUE: " << MotorAcceleration_file.value() << std::endl;
   } else {
-    std::cout << "MotorAcceleration           \t\t\t\tactual: " << MotorAcceleration_actual << std::endl;
+    std::cout << "MotorAcceleration           \t\t\t\tactual: " << MotorAcceleration_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(RampGeneratorSpeedAndPositionControl_Parameter);
@@ -171,9 +171,9 @@ void JointConfigurator::readParameters() {
   configfile->readInto(dummy, "Joint_Parameter", "PositionControlSwitchingThreshold");
   PositionControlSwitchingThreshold_file = dummy * radian_per_second;
   if (!AreSame(PositionControlSwitchingThreshold_actual.value(), PositionControlSwitchingThreshold_file.value())) {
-    std::cout << "PositionControlSwitchingThreshold \t\t\tactual: " << PositionControlSwitchingThreshold_actual << " \tNEW VALUE: " << PositionControlSwitchingThreshold_file << std::endl;
+    std::cout << "PositionControlSwitchingThreshold \t\t\tactual: " << PositionControlSwitchingThreshold_actual.value() << " \tNEW VALUE: " << PositionControlSwitchingThreshold_file.value() << std::endl;
   } else {
-    std::cout << "PositionControlSwitchingThreshold \t\t\tactual: " << PositionControlSwitchingThreshold_actual << std::endl;
+    std::cout << "PositionControlSwitchingThreshold \t\t\tactual: " << PositionControlSwitchingThreshold_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(SpeedControlSwitchingThreshold_Parameter);
@@ -181,9 +181,9 @@ void JointConfigurator::readParameters() {
   configfile->readInto(dummy, "Joint_Parameter", "SpeedControlSwitchingThreshold");
   SpeedControlSwitchingThreshold_file = dummy * radian_per_second;
   if (!AreSame(SpeedControlSwitchingThreshold_actual.value(), SpeedControlSwitchingThreshold_file.value())) {
-    std::cout << "SpeedControlSwitchingThreshold \t\t\t\tactual: " << SpeedControlSwitchingThreshold_actual << " \tNEW VALUE: " << SpeedControlSwitchingThreshold_file << std::endl;
+    std::cout << "SpeedControlSwitchingThreshold \t\t\t\tactual: " << SpeedControlSwitchingThreshold_actual.value() << " \tNEW VALUE: " << SpeedControlSwitchingThreshold_file.value() << std::endl;
   } else {
-    std::cout << "SpeedControlSwitchingThreshold \t\t\t\tactual: " << SpeedControlSwitchingThreshold_actual << std::endl;
+    std::cout << "SpeedControlSwitchingThreshold \t\t\t\tactual: " << SpeedControlSwitchingThreshold_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(PParameterFirstParametersPositionControl_Parameter);
@@ -382,18 +382,18 @@ void JointConfigurator::readParameters() {
   IClippingParameterCurrentControl_file = dummy;
   if (!AreSame(IClippingParameterCurrentControl_actual, IClippingParameterCurrentControl_file)) {
     std::cout << "IClippingParameterCurrentControl \t\t\tactual: " << IClippingParameterCurrentControl_actual << " \tNEW VALUE: " << IClippingParameterCurrentControl_file << std::endl;
-  } else {PParameterFirstParametersSpeedControl_file
+  } else {
     std::cout << "IClippingParameterCurrentControl \t\t\tactual: " << IClippingParameterCurrentControl_actual << std::endl;
-  }
+}
 
   joint->getConfigurationParameter(MaximumVelocityToSetPosition_Parameter);
   MaximumVelocityToSetPosition_Parameter.getParameter(MaximumVelocityToSetPosition_actual);
   configfile->readInto(dummy, "Joint_Parameter", "MaximumVelocityToSetPosition");
   MaximumVelocityToSetPosition_file = dummy * radian_per_second;
   if (!AreSame(MaximumVelocityToSetPosition_actual.value(), MaximumVelocityToSetPosition_file.value())) {
-    std::cout << "MaximumVelocityToSetPosition \t\t\t\tactual: " << MaximumVelocityToSetPosition_actual << " \tNEW VALUE: " << MaximumVelocityToSetPosition_file << std::endl;
+    std::cout << "MaximumVelocityToSetPosition \t\t\t\tactual: " << MaximumVelocityToSetPosition_actual.value() << " \tNEW VALUE: " << MaximumVelocityToSetPosition_file.value() << std::endl;
   } else {
-    std::cout << "MaximumVelocityToSetPosition \t\t\t\tactual: " << MaximumVelocityToSetPosition_actual << std::endl;
+    std::cout << "MaximumVelocityToSetPosition \t\t\t\tactual: " << MaximumVelocityToSetPosition_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(PositionTargetReachedDistance_Parameter);
@@ -411,13 +411,16 @@ void JointConfigurator::readParameters() {
   configfile->readInto(dummy, "Joint_Parameter", "VelocityThresholdForHallFX");
   VelocityThresholdForHallFX_file = dummy * radian_per_second;
   if (!AreSame(VelocityThresholdForHallFX_actual.value(), VelocityThresholdForHallFX_file.value())) {
-    std::cout << "VelocityThresholdForHallFX \t\t\t\tactual: " << VelocityThresholdForHallFX_actual << " \tNEW VALUE: " << VelocityThresholdForHallFX_file << std::endl;
+    std::cout << "VelocityThresholdForHallFX \t\t\t\tactual: " << VelocityThresholdForHallFX_actual.value() << " \tNEW VALUE: " << VelocityThresholdForHallFX_file.value() << std::endl;
   } else {
-    std::cout << "VelocityThresholdForHallFX \t\t\t\tactual: " << VelocityThresholdForHallFX_actual << std::endl;
+    std::cout << "VelocityThresholdForHallFX \t\t\t\tactual: " << VelocityThresholdForHallFX_actual.value() << std::endl;
   }
 
   ParameterRead = true;
 }
+
+
+
 
 void JointConfigurator::readPasswordProtectedParameters() {
 
@@ -437,9 +440,9 @@ void JointConfigurator::readPasswordProtectedParameters() {
   configfilePP->readInto(dummy, "Joint_Parameter", "MaximumMotorCurrent");
   MaximumMotorCurrent_file = dummy * ampere;
   if (!AreSame(MaximumMotorCurrent_actual.value(), MaximumMotorCurrent_file.value())) {
-    std::cout << "MaximumMotorCurrent      \t\t\t\tactual: " << MaximumMotorCurrent_actual << " \tNEW VALUE: " << MaximumMotorCurrent_file << std::endl;
+    std::cout << "MaximumMotorCurrent      \t\t\t\tactual: " << MaximumMotorCurrent_actual.value() << " \tNEW VALUE: " << MaximumMotorCurrent_file.value() << std::endl;
   } else {
-    std::cout << "MaximumMotorCurrent      \t\t\t\tactual: " << MaximumMotorCurrent_actual << std::endl;
+    std::cout << "MaximumMotorCurrent      \t\t\t\tactual: " << MaximumMotorCurrent_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(ThermalWindingTimeConstant_Parameter);
@@ -447,9 +450,9 @@ void JointConfigurator::readPasswordProtectedParameters() {
   configfilePP->readInto(dummy, "Joint_Parameter", "ThermalWindingTimeConstant");
   ThermalWindingTimeConstant_file = dummy * si::seconds;
   if (!AreSame(ThermalWindingTimeConstant_actual.value(), ThermalWindingTimeConstant_file.value())) {
-    std::cout << "ThermalWindingTimeConstant \t\t\t\tactual: " << ThermalWindingTimeConstant_actual << " \tNEW VALUE: " << ThermalWindingTimeConstant_file << std::endl;
+    std::cout << "ThermalWindingTimeConstant \t\t\t\tactual: " << ThermalWindingTimeConstant_actual.value() << " \tNEW VALUE: " << ThermalWindingTimeConstant_file.value() << std::endl;
   } else {
-    std::cout << "ThermalWindingTimeConstant \t\t\t\tactual: " << ThermalWindingTimeConstant_actual << std::endl;
+    std::cout << "ThermalWindingTimeConstant \t\t\t\tactual: " << ThermalWindingTimeConstant_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(I2tLimit_Parameter);
@@ -462,27 +465,25 @@ void JointConfigurator::readPasswordProtectedParameters() {
     std::cout << "I2tLimit \t\t\t\t\t\tactual: " << I2tLimit_actual << std::endl;
   }
 
-
-
-
   joint->getConfigurationParameter(PIDControlTime_Parameter);
   PIDControlTime_Parameter.getParameter(PIDControlTime_actual);
   configfilePP->readInto(dummy, "Joint_Parameter", "PIDControlTime");
   PIDControlTime_file = dummy * si::seconds;
   if (!AreSame(PIDControlTime_actual.value(), PIDControlTime_file.value())) {
-    std::cout << "PIDControlTime           \t\t\t\tactual: " << PIDControlTime_actual << " \tNEW VALUE: " << PIDControlTime_file << std::endl;
+    std::cout << "PIDControlTime           \t\t\t\tactual: " << PIDControlTime_actual.value() << " \tNEW VALUE: " << PIDControlTime_file.value() << std::endl;
   } else {
-    std::cout << "PIDControlTime           \t\t\t\tactual: " << PIDControlTime_actual << std::endl;
+    std::cout << "PIDControlTime           \t\t\t\tactual: " << PIDControlTime_actual.value() << std::endl;
   }
+
 
   joint->getConfigurationParameter(CurrentControlLoopDelay_Parameter);
   CurrentControlLoopDelay_Parameter.getParameter(CurrentControlLoopDelay_actual);
   configfilePP->readInto(dummy, "Joint_Parameter", "CurrentControlLoopDelay");
   CurrentControlLoopDelay_file = dummy * si::seconds;
   if (!AreSame(CurrentControlLoopDelay_actual.value(), CurrentControlLoopDelay_file.value())) {
-    std::cout << "CurrentControlLoopDelay  \t\t\t\tactual: " << CurrentControlLoopDelay_actual << " \tNEW VALUE: " << CurrentControlLoopDelay_file << std::endl;
+    std::cout << "CurrentControlLoopDelay  \t\t\t\tactual: " << CurrentControlLoopDelay_actual.value() << " \tNEW VALUE: " << CurrentControlLoopDelay_file.value() << std::endl;
   } else {
-    std::cout << "CurrentControlLoopDelay  \t\t\t\tactual: " << CurrentControlLoopDelay_actual << std::endl;
+    std::cout << "CurrentControlLoopDelay  \t\t\t\tactual: " << CurrentControlLoopDelay_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(CommutationMode_Parameter);
@@ -550,9 +551,9 @@ void JointConfigurator::readPasswordProtectedParameters() {
   configfilePP->readInto(dummy, "Joint_Parameter", "CommutationMotorCurrent");
   CommutationMotorCurrent_file = dummy * ampere;
   if (!AreSame(CommutationMotorCurrent_actual.value(), CommutationMotorCurrent_file.value())) {
-    std::cout << "CommutationMotorCurrent \t\t\t\tactual: " << CommutationMotorCurrent_actual << " \tNEW VALUE: " << CommutationMotorCurrent_file << std::endl;
+    std::cout << "CommutationMotorCurrent \t\t\t\tactual: " << CommutationMotorCurrent_actual.value() << " \tNEW VALUE: " << CommutationMotorCurrent_file.value() << std::endl;
   } else {
-    std::cout << "CommutationMotorCurrent \t\t\t\tactual: " << CommutationMotorCurrent_actual << std::endl;
+    std::cout << "CommutationMotorCurrent \t\t\t\tactual: " << CommutationMotorCurrent_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(MassInertiaConstant_Parameter);
@@ -589,9 +590,9 @@ void JointConfigurator::readPasswordProtectedParameters() {
   configfilePP->readInto(dummy, "Joint_Parameter", "InitSineDelay");
   InitSineDelay_file = dummy * si::seconds;
   if (!AreSame(InitSineDelay_actual.value(), InitSineDelay_file.value())) {
-    std::cout << "InitSineDelay \t\t\t\t\t\tactual: " << InitSineDelay_actual << " \tNEW VALUE: " << InitSineDelay_file << std::endl;
+    std::cout << "InitSineDelay \t\t\t\t\t\tactual: " << InitSineDelay_actual.value() << " \tNEW VALUE: " << InitSineDelay_file.value() << std::endl;
   } else {
-    std::cout << "InitSineDelay \t\t\t\t\t\tactual: " << InitSineDelay_actual << std::endl;
+    std::cout << "InitSineDelay \t\t\t\t\t\tactual: " << InitSineDelay_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(ActivateOvervoltageProtection_Parameter);
@@ -639,9 +640,9 @@ void JointConfigurator::readPasswordProtectedParameters() {
   configfilePP->readInto(dummy, "Joint_Parameter", "MotorCoilResistance");
   MotorCoilResistance_file = dummy * ohm;
   if (!AreSame(MotorCoilResistance_actual.value(), MotorCoilResistance_file.value())) {
-    std::cout << "MotorCoilResistance \t\t\t\t\tactual: " << MotorCoilResistance_actual << " \tNEW VALUE: " << MotorCoilResistance_file << std::endl;
+    std::cout << "MotorCoilResistance \t\t\t\t\tactual: " << MotorCoilResistance_actual.value() << " \tNEW VALUE: " << MotorCoilResistance_file.value() << std::endl;
   } else {
-    std::cout << "MotorCoilResistance \t\t\t\t\tactual: " << MotorCoilResistance_actual << std::endl;
+    std::cout << "MotorCoilResistance \t\t\t\t\tactual: " << MotorCoilResistance_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(MotorPoles_Parameter);
@@ -669,9 +670,9 @@ void JointConfigurator::readPasswordProtectedParameters() {
   configfilePP->readInto(dummy, "Joint_Parameter", "MotorControllerTimeout");
   MotorControllerTimeout_file = dummy * second;
   if (!AreSame(MotorControllerTimeout_actual.value(), MotorControllerTimeout_file.value())) {
-    std::cout << "MotorControllerTimeout \t\t\t\t\tactual: " << MotorControllerTimeout_actual << " \tNEW VALUE: " << MotorControllerTimeout_file << std::endl;
+    std::cout << "MotorControllerTimeout \t\t\t\t\tactual: " << MotorControllerTimeout_actual.value() << " \tNEW VALUE: " << MotorControllerTimeout_file.value() << std::endl;
   } else {
-    std::cout << "MotorControllerTimeout \t\t\t\t\tactual: " << MotorControllerTimeout_actual << std::endl;
+    std::cout << "MotorControllerTimeout \t\t\t\t\tactual: " << MotorControllerTimeout_actual.value() << std::endl;
   }
 
   joint->getConfigurationParameter(MotorHaltedVelocity_Parameter);
@@ -689,8 +690,8 @@ void JointConfigurator::readPasswordProtectedParameters() {
   ProtectedParameterRead = true;
 }
 
-//=======================READ ONLY =============================
 
+//=======================READ ONLY =============================
 void JointConfigurator::readReadOnlyParameters() {
 
   std::cout << "===================== Read Only Parameters =====================" << std::endl;
@@ -699,11 +700,11 @@ void JointConfigurator::readReadOnlyParameters() {
 
   joint->getConfigurationParameter(OperationalTime_Parameter);
   OperationalTime_Parameter.getParameter(OperationalTime_actual);
-  std::cout << "OperationalTime \t\t\t\t\tactual: " << OperationalTime_actual << std::endl;
+  std::cout << "OperationalTime \t\t\t\t\tactual: " << OperationalTime_actual.value() << std::endl;
 
   joint->getConfigurationParameter(ActualMotorVoltage_Parameter);
   ActualMotorVoltage_Parameter.getParameter(ActualMotorVoltage_actual);
-  std::cout << "ActualMotorVoltage \t\t\t\t\tactual: " << ActualMotorVoltage_actual << std::endl;
+  std::cout << "ActualMotorVoltage \t\t\t\t\tactual: " << ActualMotorVoltage_actual.value() << std::endl;
 
   joint->getConfigurationParameter(ActualCommutationOffset_Parameter);
   ActualCommutationOffset_Parameter.getParameter(ActualCommutationOffset_actual);
@@ -711,31 +712,31 @@ void JointConfigurator::readReadOnlyParameters() {
 
   joint->getConfigurationParameter(PositionError_Parameter);
   PositionError_Parameter.getParameter(PositionError_actual);
-  std::cout << "PositionError \t\t\t\t\t\tactual: " << PositionError_actual << std::endl;
+  std::cout << "PositionError \t\t\t\t\t\tactual: " << PositionError_actual.value() << std::endl;
 
   joint->getConfigurationParameter(PositionErrorSum_Parameter);
   PositionErrorSum_Parameter.getParameter(PositionErrorSum_actual);
-  std::cout << "PositionErrorSum \t\t\t\t\tactual: " << PositionErrorSum_actual << std::endl;
+  std::cout << "PositionErrorSum \t\t\t\t\tactual: " << PositionErrorSum_actual.value() << std::endl;
 
   joint->getConfigurationParameter(VelocityError_Parameter);
   VelocityError_Parameter.getParameter(VelocityError_actual);
-  std::cout << "VelocityError \t\t\t\t\t\tactual: " << VelocityError_actual << std::endl;
+  std::cout << "VelocityError \t\t\t\t\t\tactual: " << VelocityError_actual.value() << std::endl;
 
   joint->getConfigurationParameter(VelocityErrorSum_Parameter);
   VelocityErrorSum_Parameter.getParameter(VelocityErrorSum_actual);
-  std::cout << "VelocityErrorSum \t\t\t\t\tactual: " << VelocityErrorSum_actual << std::endl;
+  std::cout << "VelocityErrorSum \t\t\t\t\tactual: " << VelocityErrorSum_actual.value() << std::endl;
 
   joint->getConfigurationParameter(CurrentError_Parameter);
   CurrentError_Parameter.getParameter(CurrentError_actual);
-  std::cout << "CurrentError \t\t\t\t\t\tactual: " << CurrentError_actual << std::endl;
+  std::cout << "CurrentError \t\t\t\t\t\tactual: " << CurrentError_actual.value() << std::endl;
 
   joint->getConfigurationParameter(CurrentErrorSum_Parameter);
   CurrentErrorSum_Parameter.getParameter(CurrentErrorSum_actual);
-  std::cout << "CurrentErrorSum \t\t\t\t\tactual: " << CurrentErrorSum_actual << std::endl;
+  std::cout << "CurrentErrorSum \t\t\t\t\tactual: " << CurrentErrorSum_actual.value() << std::endl;
 
   joint->getConfigurationParameter(RampGeneratorSpeed_Parameter);
   RampGeneratorSpeed_Parameter.getParameter(RampGeneratorSpeed_actual);
-  std::cout << "RampGeneratorSpeed \t\t\t\t\tactual: " << RampGeneratorSpeed_actual << std::endl;
+  std::cout << "RampGeneratorSpeed \t\t\t\t\tactual: " << RampGeneratorSpeed_actual.value() << std::endl;
 
   joint->getConfigurationParameter(I2tSum_Parameter);
   I2tSum_Parameter.getParameter(I2tSum_actual);
@@ -747,7 +748,7 @@ void JointConfigurator::readReadOnlyParameters() {
 
   joint->getConfigurationParameter(ActualMotorDriverTemperature_Parameter);
   ActualMotorDriverTemperature_Parameter.getParameter(ActualMotorDriverTemperature_actual);
-  std::cout << "ActualMotorDriverTemperature \t\t\t\tactual: " << ActualMotorDriverTemperature_actual << std::endl;
+  std::cout << "ActualMotorDriverTemperature \t\t\t\tactual: " << ActualMotorDriverTemperature_actual.value() << std::endl;
 
   //  joint->getConfigurationParameter(ActualModuleSupplyCurrent_Parameter);
   //  ActualModuleSupplyCurrent_Parameter.getParameter(ActualModuleSupplyCurrent_actual);
@@ -757,7 +758,7 @@ void JointConfigurator::readReadOnlyParameters() {
 }
 
 void JointConfigurator::setParametersToJoint() {
-/*
+
   if (!ParameterRead) {
     std::cout << "The Joint Parameters have to been read before hand!" << std::endl;
     return;
@@ -768,25 +769,25 @@ void JointConfigurator::setParametersToJoint() {
   if (!AreSame(MaximumPositioningVelocity_actual.value(), MaximumPositioningVelocity_file.value())) {
     MaximumPositioningVelocity_Parameter.setParameter(MaximumPositioningVelocity_file);
     joint->setConfigurationParameter(MaximumPositioningVelocity_Parameter);
-    std::cout << "MaximumPositioningVelocity set to: " << MaximumPositioningVelocity_file << std::endl;
+    std::cout << "MaximumPositioningVelocity set to: " << MaximumPositioningVelocity_file.value() << std::endl;
   }
 
   if (!AreSame(MotorAcceleration_actual.value(), MotorAcceleration_file.value())) {
     MotorAcceleration_Parameter.setParameter(MotorAcceleration_file);
     joint->setConfigurationParameter(MotorAcceleration_Parameter);
-    std::cout << "MotorAcceleration set to: " << MotorAcceleration_file << std::endl;
+    std::cout << "MotorAcceleration set to: " << MotorAcceleration_file.value() << std::endl;
   }
 
   if (!AreSame(PositionControlSwitchingThreshold_actual.value(), PositionControlSwitchingThreshold_file.value())) {
     PositionControlSwitchingThreshold_Parameter.setParameter(PositionControlSwitchingThreshold_file);
     joint->setConfigurationParameter(PositionControlSwitchingThreshold_Parameter);
-    std::cout << "PositionControlSwitchingThreshold set to: " << PositionControlSwitchingThreshold_file << std::endl;
+    std::cout << "PositionControlSwitchingThreshold set to: " << PositionControlSwitchingThreshold_file.value() << std::endl;
   }
 
   if (!AreSame(SpeedControlSwitchingThreshold_actual.value(), SpeedControlSwitchingThreshold_file.value())) {
     SpeedControlSwitchingThreshold_Parameter.setParameter(SpeedControlSwitchingThreshold_file);
     joint->setConfigurationParameter(SpeedControlSwitchingThreshold_Parameter);
-    std::cout << "SpeedControlSwitchingThreshold set to: " << SpeedControlSwitchingThreshold_file << std::endl;
+    std::cout << "SpeedControlSwitchingThreshold set to: " << SpeedControlSwitchingThreshold_file.value() << std::endl;
   }
 
   if (!AreSame(RampGeneratorSpeedAndPositionControl_actual, RampGeneratorSpeedAndPositionControl_file)) {
@@ -919,7 +920,7 @@ void JointConfigurator::setParametersToJoint() {
   if (!AreSame(MaximumVelocityToSetPosition_actual.value(), MaximumVelocityToSetPosition_file.value())) {
     MaximumVelocityToSetPosition_Parameter.setParameter(MaximumVelocityToSetPosition_file);
     joint->setConfigurationParameter(MaximumVelocityToSetPosition_Parameter);
-    std::cout << "MaximumVelocityToSetPosition set to: " << MaximumVelocityToSetPosition_file << std::endl;
+    std::cout << "MaximumVelocityToSetPosition set to: " << MaximumVelocityToSetPosition_file.value() << std::endl;
   }
 
   if (!AreSame(PositionTargetReachedDistance_actual, PositionTargetReachedDistance_file)) {
@@ -931,15 +932,15 @@ void JointConfigurator::setParametersToJoint() {
   if (!AreSame(VelocityThresholdForHallFX_actual.value(), VelocityThresholdForHallFX_file.value())) {
     VelocityThresholdForHallFX_Parameter.setParameter(VelocityThresholdForHallFX_file);
     joint->setConfigurationParameter(VelocityThresholdForHallFX_Parameter);
-    std::cout << "VelocityThresholdForHallFX set to: " << VelocityThresholdForHallFX_file << std::endl;
+    std::cout << "VelocityThresholdForHallFX set to: " << VelocityThresholdForHallFX_file.value() << std::endl;
   }
 
   std::cout << "Parameters set for Joint: " << jointName << std::endl << std::endl;
-*/
+
 }
 
 void JointConfigurator::setProtectedParametersToJoint() {
-/*
+
   if (!ProtectedParameterRead) {
     std::cout << "The protected Joint Parameters have to been read before hand!" << std::endl;
     return;
@@ -951,19 +952,19 @@ void JointConfigurator::setProtectedParametersToJoint() {
     if (!AreSame(MaximumMotorCurrent_actual.value(), MaximumMotorCurrent_file.value())) {
       MaximumMotorCurrent_Parameter.setParameter(MaximumMotorCurrent_file);
       joint->setConfigurationParameter(MaximumMotorCurrent_Parameter);
-      std::cout << "MaximumMotorCurrent set to: " << MaximumMotorCurrent_file << std::endl;
+      std::cout << "MaximumMotorCurrent set to: " << MaximumMotorCurrent_file.value() << std::endl;
     }
 
     if (!AreSame(PIDControlTime_actual.value(), PIDControlTime_file.value())) {
       PIDControlTime_Parameter.setParameter(PIDControlTime_file);
       joint->setConfigurationParameter(PIDControlTime_Parameter);
-      std::cout << "PIDControlTime set to: " << PIDControlTime_file << std::endl;
+      std::cout << "PIDControlTime set to: " << PIDControlTime_file.value() << std::endl;
     }
 
     if (!AreSame(CurrentControlLoopDelay_actual.value(), CurrentControlLoopDelay_file.value())) {
       CurrentControlLoopDelay_Parameter.setParameter(CurrentControlLoopDelay_file);
       joint->setConfigurationParameter(CurrentControlLoopDelay_Parameter);
-      std::cout << "CurrentControlLoopDelay set to: " << CurrentControlLoopDelay_file << std::endl;
+      std::cout << "CurrentControlLoopDelay set to: " << CurrentControlLoopDelay_file.value() << std::endl;
     }
 
     if (!AreSame(SetEncoderCounterZeroAtNextNChannel_actual, SetEncoderCounterZeroAtNextNChannel_file)) {
@@ -999,7 +1000,7 @@ void JointConfigurator::setProtectedParametersToJoint() {
     if (!AreSame(CommutationMotorCurrent_actual.value(), CommutationMotorCurrent_file.value())) {
       CommutationMotorCurrent_Parameter.setParameter(CommutationMotorCurrent_file);
       joint->setConfigurationParameter(CommutationMotorCurrent_Parameter);
-      std::cout << "CommutationMotorCurrent set to: " << CommutationMotorCurrent_file << std::endl;
+      std::cout << "CommutationMotorCurrent set to: " << CommutationMotorCurrent_file.value() << std::endl;
     }
 
     if (!AreSame(MassInertiaConstant_actual, MassInertiaConstant_file)) {
@@ -1023,7 +1024,7 @@ void JointConfigurator::setProtectedParametersToJoint() {
     if (!AreSame(InitSineDelay_actual.value(), InitSineDelay_file.value())) {
       InitSineDelay_Parameter.setParameter(InitSineDelay_file);
       joint->setConfigurationParameter(InitSineDelay_Parameter);
-      std::cout << "InitSineDelay set to: " << InitSineDelay_file << std::endl;
+      std::cout << "InitSineDelay set to: " << InitSineDelay_file.value() << std::endl;
     }
 
     if (!AreSame(ActivateOvervoltageProtection_actual, ActivateOvervoltageProtection_file)) {
@@ -1059,7 +1060,7 @@ void JointConfigurator::setProtectedParametersToJoint() {
     if (!AreSame(MotorCoilResistance_actual.value(), MotorCoilResistance_file.value())) {
       MotorCoilResistance_Parameter.setParameter(MotorCoilResistance_file);
       joint->setConfigurationParameter(MotorCoilResistance_Parameter);
-      std::cout << "MotorCoilResistance set to: " << MotorCoilResistance_file << std::endl;
+      std::cout << "MotorCoilResistance set to: " << MotorCoilResistance_file.value() << std::endl;
     }
 
     if (!AreSame(MotorPoles_actual, MotorPoles_file)) {
@@ -1077,7 +1078,7 @@ void JointConfigurator::setProtectedParametersToJoint() {
     if (!AreSame(ThermalWindingTimeConstant_actual.value(), ThermalWindingTimeConstant_file.value())) {
       ThermalWindingTimeConstant_Parameter.setParameter(ThermalWindingTimeConstant_file);
       joint->setConfigurationParameter(ThermalWindingTimeConstant_Parameter);
-      std::cout << "ThermalWindingTimeConstant set to: " << ThermalWindingTimeConstant_file << std::endl;
+      std::cout << "ThermalWindingTimeConstant set to: " << ThermalWindingTimeConstant_file.value() << std::endl;
     }
 
     if (!AreSame(I2tLimit_actual, I2tLimit_file)) {
@@ -1089,7 +1090,7 @@ void JointConfigurator::setProtectedParametersToJoint() {
     if (!AreSame(MotorControllerTimeout_actual.value(), MotorControllerTimeout_file.value())) {
       MotorControllerTimeout_Parameter.setParameter(MotorControllerTimeout_file);
       joint->setConfigurationParameter(MotorControllerTimeout_Parameter);
-      std::cout << "MotorControllerTimeout set to: " << MotorControllerTimeout_file << std::endl;
+      std::cout << "MotorControllerTimeout set to: " << MotorControllerTimeout_file.value() << std::endl;
     }
 
     if (!AreSame(MotorHaltedVelocity_actual, MotorHaltedVelocity_file)) {
@@ -1104,7 +1105,7 @@ void JointConfigurator::setProtectedParametersToJoint() {
   } catch (JointParameterException& e) {
 
   }
-*/
+
 }
 
 void JointConfigurator::storeParametersToJoint() {
@@ -1119,25 +1120,25 @@ void JointConfigurator::storeParametersToJoint() {
   if (!AreSame(MaximumPositioningVelocity_actual.value(), MaximumPositioningVelocity_file.value())) {
     MaximumPositioningVelocity_Parameter.setParameter(MaximumPositioningVelocity_file);
     joint->storeConfigurationParameterPermanent(MaximumPositioningVelocity_Parameter);
-    std::cout << "MaximumPositioningVelocity stored0 to: " << MaximumPositioningVelocity_file << std::endl;
+    std::cout << "MaximumPositioningVelocity stored0 to: " << MaximumPositioningVelocity_file.value() << std::endl;
   }
 
   if (!AreSame(MotorAcceleration_actual.value(), MotorAcceleration_file.value())) {
     MotorAcceleration_Parameter.setParameter(MotorAcceleration_file);
     joint->storeConfigurationParameterPermanent(MotorAcceleration_Parameter);
-    std::cout << "MotorAcceleration stored with: " << MotorAcceleration_file << std::endl;
+    std::cout << "MotorAcceleration stored with: " << MotorAcceleration_file.value() << std::endl;
   }
 
   if (!AreSame(PositionControlSwitchingThreshold_actual.value(), PositionControlSwitchingThreshold_file.value())) {
     PositionControlSwitchingThreshold_Parameter.setParameter(PositionControlSwitchingThreshold_file);
     joint->storeConfigurationParameterPermanent(PositionControlSwitchingThreshold_Parameter);
-    std::cout << "PositionControlSwitchingThreshold stored with: " << PositionControlSwitchingThreshold_file << std::endl;
+    std::cout << "PositionControlSwitchingThreshold stored with: " << PositionControlSwitchingThreshold_file.value() << std::endl;
   }
 
   if (!AreSame(SpeedControlSwitchingThreshold_actual.value(), SpeedControlSwitchingThreshold_file.value())) {
     SpeedControlSwitchingThreshold_Parameter.setParameter(SpeedControlSwitchingThreshold_file);
     joint->storeConfigurationParameterPermanent(SpeedControlSwitchingThreshold_Parameter);
-    std::cout << "SpeedControlSwitchingThreshold stored with: " << SpeedControlSwitchingThreshold_file << std::endl;
+    std::cout << "SpeedControlSwitchingThreshold stored with: " << SpeedControlSwitchingThreshold_file.value() << std::endl;
   }
 
   if (!AreSame(RampGeneratorSpeedAndPositionControl_actual, RampGeneratorSpeedAndPositionControl_file)) {
@@ -1270,7 +1271,7 @@ void JointConfigurator::storeParametersToJoint() {
   if (!AreSame(MaximumVelocityToSetPosition_actual.value(), MaximumVelocityToSetPosition_file.value())) {
     MaximumVelocityToSetPosition_Parameter.setParameter(MaximumVelocityToSetPosition_file);
     joint->storeConfigurationParameterPermanent(MaximumVelocityToSetPosition_Parameter);
-    std::cout << "MaximumVelocityToSetPosition stored with: " << MaximumVelocityToSetPosition_file << std::endl;
+    std::cout << "MaximumVelocityToSetPosition stored with: " << MaximumVelocityToSetPosition_file.value() << std::endl;
   }
 
   if (!AreSame(PositionTargetReachedDistance_actual, PositionTargetReachedDistance_file)) {
@@ -1282,7 +1283,7 @@ void JointConfigurator::storeParametersToJoint() {
   if (!AreSame(VelocityThresholdForHallFX_actual.value(), VelocityThresholdForHallFX_file.value())) {
     VelocityThresholdForHallFX_Parameter.setParameter(VelocityThresholdForHallFX_file);
     joint->storeConfigurationParameterPermanent(VelocityThresholdForHallFX_Parameter);
-    std::cout << "VelocityThresholdForHallFX stored with: " << VelocityThresholdForHallFX_file << std::endl;
+    std::cout << "VelocityThresholdForHallFX stored with: " << VelocityThresholdForHallFX_file.value() << std::endl;
   }
 
   std::cout << "Parameters stored for Joint: " << jointName << std::endl << std::endl;
@@ -1301,19 +1302,19 @@ void JointConfigurator::storeProtectedParametersToJoint() {
     if (!AreSame(MaximumMotorCurrent_actual.value(), MaximumMotorCurrent_file.value())) {
       MaximumMotorCurrent_Parameter.setParameter(MaximumMotorCurrent_file);
       joint->setConfigurationParameter(MaximumMotorCurrent_Parameter);
-      std::cout << "MaximumMotorCurrent set to: " << MaximumMotorCurrent_file << std::endl;
+      std::cout << "MaximumMotorCurrent set to: " << MaximumMotorCurrent_file.value() << std::endl;
     }
 
     if (!AreSame(PIDControlTime_actual.value(), PIDControlTime_file.value())) {
       PIDControlTime_Parameter.setParameter(PIDControlTime_file);
       joint->setConfigurationParameter(PIDControlTime_Parameter);
-      std::cout << "PIDControlTime set to: " << PIDControlTime_file << std::endl;
+      std::cout << "PIDControlTime set to: " << PIDControlTime_file.value() << std::endl;
     }
 
     if (!AreSame(CurrentControlLoopDelay_actual.value(), CurrentControlLoopDelay_file.value())) {
       CurrentControlLoopDelay_Parameter.setParameter(CurrentControlLoopDelay_file);
       joint->setConfigurationParameter(CurrentControlLoopDelay_Parameter);
-      std::cout << "CurrentControlLoopDelay set to: " << CurrentControlLoopDelay_file << std::endl;
+      std::cout << "CurrentControlLoopDelay set to: " << CurrentControlLoopDelay_file.value() << std::endl;
     }
 
     if (!AreSame(SetEncoderCounterZeroAtNextNChannel_actual, SetEncoderCounterZeroAtNextNChannel_file)) {
@@ -1349,7 +1350,7 @@ void JointConfigurator::storeProtectedParametersToJoint() {
     if (!AreSame(CommutationMotorCurrent_actual.value(), CommutationMotorCurrent_file.value())) {
       CommutationMotorCurrent_Parameter.setParameter(CommutationMotorCurrent_file);
       joint->setConfigurationParameter(CommutationMotorCurrent_Parameter);
-      std::cout << "CommutationMotorCurrent set to: " << CommutationMotorCurrent_file << std::endl;
+      std::cout << "CommutationMotorCurrent set to: " << CommutationMotorCurrent_file.value() << std::endl;
     }
 
     if (!AreSame(MassInertiaConstant_actual, MassInertiaConstant_file)) {
@@ -1373,7 +1374,7 @@ void JointConfigurator::storeProtectedParametersToJoint() {
     if (!AreSame(InitSineDelay_actual.value(), InitSineDelay_file.value())) {
       InitSineDelay_Parameter.setParameter(InitSineDelay_file);
       joint->setConfigurationParameter(InitSineDelay_Parameter);
-      std::cout << "InitSineDelay set to: " << InitSineDelay_file << std::endl;
+      std::cout << "InitSineDelay set to: " << InitSineDelay_file.value() << std::endl;
     }
 
     if (!AreSame(ActivateOvervoltageProtection_actual, ActivateOvervoltageProtection_file)) {
@@ -1409,7 +1410,7 @@ void JointConfigurator::storeProtectedParametersToJoint() {
     if (!AreSame(MotorCoilResistance_actual.value(), MotorCoilResistance_file.value())) {
       MotorCoilResistance_Parameter.setParameter(MotorCoilResistance_file);
       joint->setConfigurationParameter(MotorCoilResistance_Parameter);
-      std::cout << "MotorCoilResistance set to: " << MotorCoilResistance_file << std::endl;
+      std::cout << "MotorCoilResistance set to: " << MotorCoilResistance_file.value() << std::endl;
     }
 
     if (!AreSame(MotorPoles_actual, MotorPoles_file)) {
@@ -1427,7 +1428,7 @@ void JointConfigurator::storeProtectedParametersToJoint() {
     if (!AreSame(ThermalWindingTimeConstant_actual.value(), ThermalWindingTimeConstant_file.value())) {
       ThermalWindingTimeConstant_Parameter.setParameter(ThermalWindingTimeConstant_file);
       joint->setConfigurationParameter(ThermalWindingTimeConstant_Parameter);
-      std::cout << "ThermalWindingTimeConstant set to: " << ThermalWindingTimeConstant_file << std::endl;
+      std::cout << "ThermalWindingTimeConstant set to: " << ThermalWindingTimeConstant_file.value() << std::endl;
     }
 
     if (!AreSame(I2tLimit_actual, I2tLimit_file)) {
@@ -1439,7 +1440,7 @@ void JointConfigurator::storeProtectedParametersToJoint() {
     if (!AreSame(MotorControllerTimeout_actual.value(), MotorControllerTimeout_file.value())) {
       MotorControllerTimeout_Parameter.setParameter(MotorControllerTimeout_file);
       joint->setConfigurationParameter(MotorControllerTimeout_Parameter);
-      std::cout << "MotorControllerTimeout set to: " << MotorControllerTimeout_file << std::endl;
+      std::cout << "MotorControllerTimeout set to: " << MotorControllerTimeout_file.value() << std::endl;
     }
 
     if (!AreSame(MotorHaltedVelocity_actual, MotorHaltedVelocity_file)) {
