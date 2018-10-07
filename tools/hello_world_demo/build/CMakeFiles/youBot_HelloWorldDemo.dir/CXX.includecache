@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/hello_world_demo/src/main.cpp
+youbot/YouBotBase.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/hello_world_demo/src/youbot/YouBotBase.hpp
+youbot/YouBotManipulator.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/hello_world_demo/src/youbot/YouBotManipulator.hpp
+

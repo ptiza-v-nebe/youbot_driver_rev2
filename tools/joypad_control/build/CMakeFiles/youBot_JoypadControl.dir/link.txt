@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/youBot_JoypadControl.dir/src/main.cpp.o CMakeFiles/youBot_JoypadControl.dir/src/YouBotJoypad.cpp.o  -o ../bin/youBot_JoypadControl -rdynamic /usr/local/lib/libYouBotDriver.so -Wl,-Bstatic -lboost_thread -lboost_date_time -lboost_filesystem -lboost_system -lboost_chrono -lboost_atomic -Wl,-Bdynamic -lpthread -lpthread -lSDL -Wl,-rpath,/usr/local/lib 

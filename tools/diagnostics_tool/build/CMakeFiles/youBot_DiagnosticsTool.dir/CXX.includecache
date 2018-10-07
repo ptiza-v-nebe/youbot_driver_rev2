@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/src/YouBotDiagnostics.cpp
+YouBotDiagnostics.h
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/src/YouBotDiagnostics.h
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/src/YouBotDiagnostics.h
+fstream
+-
+boost/thread.hpp
+-
+youbot/EthercatMaster.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/src/youbot/EthercatMaster.hpp
+youbot/YouBotJoint.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/src/youbot/YouBotJoint.hpp
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/src/main.cpp
+signal.h
+-
+YouBotDiagnostics.h
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/src/YouBotDiagnostics.h
+

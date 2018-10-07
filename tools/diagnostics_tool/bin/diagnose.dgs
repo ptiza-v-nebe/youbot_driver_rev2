@@ -1,0 +1,192 @@
+USER INPUT: Number of Base(s) connected to the etherCAT-master: 1
+USER INPUT: Number of Arm(s)  connected to the etherCAT-master: 1
+=========================================================
+----- Topological Information of all slaves: -----
+slave no  1:	BASE-Master:	KR-845		--> parent:  0	--> connections:  2
+slave no  2:	BASE-Joint:	TMCM-1632	--> parent:  1	--> connections:  2
+slave no  3:	BASE-Joint:	TMCM-1632	--> parent:  2	--> connections:  2
+slave no  4:	BASE-Joint:	TMCM-1632	--> parent:  3	--> connections:  2
+slave no  5:	BASE-Joint:	TMCM-1632	--> parent:  4	--> connections:  1
+slave no  6:	ARM-Master:	KR-843		--> parent:  1	--> connections:  3
+slave no  7:	ARM-Joint:	TMCM-1610	--> parent:  6	--> connections:  2
+slave no  8:	ARM-Joint:	TMCM-1610	--> parent:  7	--> connections:  2
+slave no  9:	ARM-Joint:	TMCM-1610	--> parent:  8	--> connections:  2
+slave no 10:	ARM-Joint:	TMCM-1610	--> parent:  9	--> connections:  2
+slave no 11:	ARM-Joint:	TMCM-1610	--> parent: 10	--> connections:  1
+=========================================================
+Number of ALL slaves:           11
+Number of JOINT slaves:         9
+Number of BaseMasterBoards:     1
+Number of BaseSlaveControllers: 4
+Number of ArmMasterBoards:      1
+Number of ArmSlaveControllers:  5
+=========================================================
+----- Topological Information of joints: -----
+youBot-unit:    BASE
+MasterBoardtyp: KR-845
+SlaveTyp:       TMCM-1632
+MasterBoardNo:  1
+SlaveNo:        2
+JointNo:        1
+Firmware:       200
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    BASE
+MasterBoardtyp: KR-845
+SlaveTyp:       TMCM-1632
+MasterBoardNo:  1
+SlaveNo:        3
+JointNo:        2
+Firmware:       200
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    BASE
+MasterBoardtyp: KR-845
+SlaveTyp:       TMCM-1632
+MasterBoardNo:  1
+SlaveNo:        4
+JointNo:        3
+Firmware:       200
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    BASE
+MasterBoardtyp: KR-845
+SlaveTyp:       TMCM-1632
+MasterBoardNo:  1
+SlaveNo:        5
+JointNo:        4
+Firmware:       200
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    MANIPULATOR
+MasterBoardtyp: KR-843
+SlaveTyp:       TMCM-1610
+MasterBoardNo:  1
+SlaveNo:        7
+JointNo:        5
+Firmware:       148
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    MANIPULATOR
+MasterBoardtyp: KR-843
+SlaveTyp:       TMCM-1610
+MasterBoardNo:  1
+SlaveNo:        8
+JointNo:        6
+Firmware:       148
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    MANIPULATOR
+MasterBoardtyp: KR-843
+SlaveTyp:       TMCM-1610
+MasterBoardNo:  1
+SlaveNo:        9
+JointNo:        7
+Firmware:       148
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    MANIPULATOR
+MasterBoardtyp: KR-843
+SlaveTyp:       TMCM-1610
+MasterBoardNo:  1
+SlaveNo:        10
+JointNo:        8
+Firmware:       148
+–––––––––––––––––––––––––––––––––––––––
+youBot-unit:    MANIPULATOR
+MasterBoardtyp: KR-843
+SlaveTyp:       TMCM-1610
+MasterBoardNo:  1
+SlaveNo:        11
+JointNo:        9
+Firmware:       148
+=========================================================
+----- Compare number of found base-/arm-masterboard(s) with users input -----
+ --> Number of masterboards equates to user input
+=========================================================
+----- Compare number of controllerboards -----
+Commutation Status of joint #1 of 1.BASE: 0
+Commutation Status of joint #2 of 1.BASE: 0
+Commutation Status of joint #3 of 1.BASE: 0
+Commutation Status of joint #4 of 1.BASE: 0
+Commutation Status of joint #1 of 1.MANIPULATOR: 1
+Commutation Status of joint #2 of 1.MANIPULATOR: 1
+Commutation Status of joint #3 of 1.MANIPULATOR: 1
+Commutation Status of joint #4 of 1.MANIPULATOR: 1
+Commutation Status of joint #5 of 1.MANIPULATOR: 1
+=========================================================
+
+----- Check functionality of the found joints: -----
+Testing etherCATSlave # 2 (i.e. joint # 1) <=> WHEEL 1 of BASE 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 14.699
+difference of position: -14.4782
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 3 (i.e. joint # 2) <=> WHEEL 2 of BASE 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 14.7003
+difference of position: -14.4523
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 4 (i.e. joint # 3) <=> WHEEL 3 of BASE 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 14.7187
+difference of position: -14.4689
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 5 (i.e. joint # 4) <=> WHEEL 4 of BASE 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 14.7111
+difference of position: -14.4577
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 7 (i.e. joint # 5) <=> AXIS 1 of MANIPULATOR 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 0.171187 and current: 0.365
+difference of position: 0.19783 and current: 0.418
+difference of position: 0.198021 and current: 0.441
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 8 (i.e. joint # 6) <=> AXIS 2 of MANIPULATOR 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 0.164853 and current: 0.479
+difference of position: 0.209208 and current: 0.274
+difference of position: 0.209429 and current: 0.065
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 9 (i.e. joint # 7) <=> AXIS 3 of MANIPULATOR 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 0.113647 and current: 1.024
+difference of position: 0.21933 and current: 0.808
+difference of position: 0.213314 and current: 0.629
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 10 (i.e. joint # 8) <=> AXIS 4 of MANIPULATOR 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 0.197743 and current: 0.05
+difference of position: 0.204867 and current: 0.098
+difference of position: 0.200796 and current: 0.084
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+Testing etherCATSlave # 11 (i.e. joint # 9) <=> AXIS 5 of MANIPULATOR 1
+–––––––––––––––––––––––––––––––––––––––
+difference of position: 0.191792 and current: 0.02
+difference of position: 0.200398 and current: 0.023
+difference of position: 0.201615 and current: 0.018
+STATUS: OK
+STATUSCODE: 33280
+=========================================================
+----- Make quick restart test: -----
+Number of all slaves before 1. restart: 11
+Number of all slaves after restart: 11
+–––––––––––––––––––––––––––––––––––––––
+Number of all slaves before 2. restart: 11
+Number of all slaves after restart: 11
+–––––––––––––––––––––––––––––––––––––––
+Number of all slaves before 3. restart: 11
+Number of all slaves after restart: 11
+=========================================================
+Diagnoses-test finished
+STATUS SUMMARY: Everything looks OK

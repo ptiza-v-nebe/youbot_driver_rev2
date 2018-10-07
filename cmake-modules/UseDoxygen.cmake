@@ -53,18 +53,25 @@ find_package(Doxygen)
 
 if(DOXYGEN_FOUND)
 	find_file(DOXYFILE_IN "Doxyfile.in"
-			PATHS "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_ROOT}/Modules/"
+			PATHS "
+                        ${CMAKE_CURRENT_SOURCE_DIR}" 
+                        "${CMAKE_ROOT}/Modules/"
+                        ${PROJECT_SOURCE_DIR}/cmake-modules
 			NO_DEFAULT_PATH)
+#message("${DOXYFILE_IN}")
 	set(DOXYFILE "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
 	include(FindPackageHandleStandardArgs)
 	find_package_handle_standard_args(DOXYFILE_IN DEFAULT_MSG "DOXYFILE_IN")
 endif()
 
+#message("${DOXYGEN_FOUND} ${DOXYFILE_IN_FOUND}")
+
 if(DOXYGEN_FOUND AND DOXYFILE_IN_FOUND)
-	usedoxygen_set_default(DOXYFILE_OUTPUT_DIR "${CMAKE_CURRENT_BINARY_DIR}/doc")
+	usedoxygen_set_default(DOXYFILE_OUTPUT_DIR "${PROJECT_SOURCE_DIR}/doc")
+        #message("${DOXYFILE_OUTPUT_DIR}")
 	usedoxygen_set_default(DOXYFILE_HTML_DIR "html")
-	usedoxygen_set_default(DOXYFILE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}\"
-		\"${CMAKE_CURRENT_BINARY_DIR}")
+	usedoxygen_set_default(DOXYFILE_SOURCE_DIR "${PROJECT_SOURCE_DIR}/doc")
+        #message("${DOXYFILE_SOURCE_DIR}")
 
 	set_property(DIRECTORY APPEND PROPERTY
 		ADDITIONAL_MAKE_CLEAN_FILES
@@ -82,10 +89,12 @@ if(DOXYGEN_FOUND AND DOXYFILE_IN_FOUND)
 
 	find_package(LATEX)
 	find_program(MAKE_PROGRAM make)
+        #message("${LATEX_COMPILER} ${MAKEINDEX_COMPILER} ${MAKE_PROGRAM} ${DOXYFILE_LATEX} ${DOXYFILE_LATEX}")
 	if(LATEX_COMPILER AND MAKEINDEX_COMPILER AND MAKE_PROGRAM AND
 			(NOT DEFINED DOXYFILE_LATEX OR DOXYFILE_LATEX STREQUAL "YES"))
 		set(DOXYFILE_LATEX "YES")
 		usedoxygen_set_default(DOXYFILE_LATEX_DIR "latex")
+                #message("${DOXYFILE_LATEX_DIR}")
 
 		set_property(DIRECTORY APPEND PROPERTY
 				ADDITIONAL_MAKE_CLEAN_FILES

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/simple_joint_position_control/src/main.cpp
+youbot/YouBotManipulator.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/simple_joint_position_control/src/youbot/YouBotManipulator.hpp
+youbot/DataTrace.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/simple_joint_position_control/src/youbot/DataTrace.hpp
+cstdio
+-
+signal.h
+-
+

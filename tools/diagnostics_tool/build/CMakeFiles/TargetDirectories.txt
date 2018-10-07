@@ -1,0 +1,3 @@
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/build/CMakeFiles/edit_cache.dir
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/build/CMakeFiles/rebuild_cache.dir
+/home/zarevich/Documents/youbot_driver_rev2/tools/diagnostics_tool/build/CMakeFiles/youBot_DiagnosticsTool.dir

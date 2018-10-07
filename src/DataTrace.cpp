@@ -91,6 +91,7 @@ DataTrace::DataTrace(YouBotJoint& youBotJoint, const std::string Name, const boo
 
       if (boost::filesystem::create_directories( rootPath ))
           LOG(info) << "directory created!";
+      boost::filesystem::permissions(rootPath, boost::filesystem::all_all);
       //else
         //throw std::runtime_error("could not create folder!");
       
@@ -304,6 +305,8 @@ void DataTrace::startTrace() {
       parametersBeginTraceFile << parameterString << std::endl;
     }
     parametersBeginTraceFile.close();
+    boost::filesystem::path ParametersAtBegin((path+"ParametersAtBegin").c_str());
+    boost::filesystem::permissions(ParametersAtBegin, boost::filesystem::all_all);
 
 
     traceStartTime = microsec_clock::local_time();
@@ -312,8 +315,13 @@ void DataTrace::startTrace() {
 
 void DataTrace::stopTrace() {
   // Bouml preserved body begin 000C9471
+    //close jointDataTrace file
     file.close();
 
+    //set permissions to all of jointDataTrace
+    boost::filesystem::path jointDataTracePath((this->path+"jointDataTrace").c_str());
+    boost::filesystem::permissions(jointDataTracePath, boost::filesystem::all_all);
+    
     parametersEndTraceFile.open((path+"ParametersAfterTrace").c_str(), std::fstream::out | std::fstream::trunc);
     std::string parameterString;
     
@@ -372,6 +380,8 @@ void DataTrace::stopTrace() {
     
     
     parametersEndTraceFile.close();
+    boost::filesystem::path ParametersAfterTracePath((this->path+"ParametersAfterTrace").c_str());
+    boost::filesystem::permissions(ParametersAfterTracePath, boost::filesystem::all_all);
   // Bouml preserved body end 000C9471
 }
 

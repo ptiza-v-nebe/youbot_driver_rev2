@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/joypad_control/src/YouBotJoypad.cpp
+YouBotJoypad.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/joypad_control/src/YouBotJoypad.hpp
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/joypad_control/src/YouBotJoypad.hpp
+iostream
+-
+vector
+-
+string
+-
+map
+-
+stdint.h
+-
+youbot/YouBotBase.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/joypad_control/src/youbot/YouBotBase.hpp
+youbot/YouBotManipulator.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/joypad_control/src/youbot/YouBotManipulator.hpp
+
+/home/zarevich/Documents/youbot_driver_rev2/tools/joypad_control/src/main.cpp
+signal.h
+-
+unistd.h
+-
+iostream
+-
+SDL/SDL.h
+-
+SDL/SDL_joystick.h
+-
+YouBotJoypad.hpp
+/home/zarevich/Documents/youbot_driver_rev2/tools/joypad_control/src/YouBotJoypad.hpp
+
